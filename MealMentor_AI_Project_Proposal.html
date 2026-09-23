@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>MealMentor AI - Project Idea Proposal</title>
+<style>
+  @page {
+    size: A4;
+    margin: 1in 1in 1in 1.5in;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 12pt;
+    line-height: 1.5;
+    color: #000;
+    background: #fff;
+  }
+  .formal-page, .content { page-break-before: always; break-before: page; }
+  .no-break { page-break-inside: avoid; break-inside: avoid; }
+
+  /* ===== TITLE PAGE ===== */
+  .title-page {
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: center; min-height: 100vh; text-align: center;
+    padding: 0 30px;
+  }
+  .title-page .university {
+    font-size: 15pt; font-weight: bold; text-transform: uppercase;
+    margin-bottom: 2pt; letter-spacing: 0.5px;
+  }
+  .title-page .college-name {
+    font-size: 14pt; font-weight: bold; text-transform: uppercase;
+    margin-bottom: 2pt; color: #000;
+  }
+  .title-page .college-address {
+    font-size: 10pt; margin-bottom: 2pt; line-height: 1.4; color: #333;
+  }
+  .title-page .college-accr {
+    font-size: 10pt; font-weight: bold; margin-bottom: 2pt;
+  }
+  .title-page .college-auto {
+    font-size: 11pt; font-weight: bold; letter-spacing: 2px; margin-bottom: 6pt;
+  }
+  .title-page .department {
+    font-size: 13pt; font-weight: bold; margin-bottom: 20pt;
+  }
+  .title-page hr.title-hr {
+    width: 55%; border: none; border-top: 2px solid #000; margin: 14pt auto;
+  }
+  .title-page .project-label {
+    font-size: 13pt; font-weight: bold; text-transform: uppercase;
+    letter-spacing: 1.5px; margin-bottom: 6pt;
+  }
+  .title-page .project-title {
+    font-size: 18pt; font-weight: bold; margin-bottom: 4pt;
+  }
+  .title-page .project-subtitle {
+    font-size: 11pt; font-style: italic; margin-bottom: 20pt; max-width: 480px;
+  }
+  .title-page .submitted-text {
+    font-size: 12pt; margin-bottom: 18pt; line-height: 1.8;
+  }
+  .title-page .info-table {
+    margin: 0 auto 18pt auto; border-collapse: collapse;
+    font-size: 12pt; text-align: left;
+  }
+  .title-page .info-table td {
+    padding: 3pt 12pt; vertical-align: top;
+  }
+  .title-page .info-table td:first-child { font-weight: bold; }
+  .title-page .guide-section {
+    margin-bottom: 18pt; font-size: 12pt;
+  }
+  .title-page .guide-section strong { display: block; }
+  .title-page .programme-info {
+    font-size: 11pt; margin-top: 6pt; line-height: 1.6;
+  }
+  .title-page .year {
+    font-size: 13pt; font-weight: bold; margin-top: 10pt;
+  }
+
+  /* ===== FORMAL PAGES ===== */
+  .formal-page { min-height: 90vh; padding-top: 30pt; }
+  .formal-page h2 {
+    text-align: center; font-size: 16pt; font-weight: bold;
+    text-transform: uppercase; margin-bottom: 20pt; letter-spacing: 2px;
+  }
+  .formal-page p {
+    text-align: justify; margin-bottom: 10pt; text-indent: 40pt;
+  }
+  .formal-page p.no-indent { text-indent: 0; }
+  .signature-block { margin-top: 40pt; }
+  .signature-row {
+    display: flex; justify-content: space-between; margin-top: 30pt;
+  }
+  .signature-col { text-align: center; }
+  .signature-col .line {
+    display: inline-block; width: 190px;
+    border-bottom: 1px solid #000; margin-bottom: 4pt;
+  }
+  .right-align { text-align: right; margin-top: 30pt; }
+
+  /* ===== CHAPTER HEADINGS ===== */
+  h1.chapter-title {
+    font-size: 16pt; font-weight: bold; text-align: center;
+    text-transform: uppercase; margin-bottom: 20pt;
+    letter-spacing: 1px; padding-top: 10pt;
+  }
+  h2.section-title {
+    font-size: 14pt; font-weight: bold;
+    margin-top: 16pt; margin-bottom: 8pt;
+  }
+  h3.subsection-title {
+    font-size: 12pt; font-weight: bold;
+    margin-top: 12pt; margin-bottom: 6pt;
+  }
+
+  /* ===== CONTENT ===== */
+  .content p {
+    text-align: justify; margin-bottom: 8pt; text-indent: 40pt;
+  }
+  .content p.no-indent { text-indent: 0; }
+  .content ul, .content ol {
+    margin: 6pt 0 10pt 48pt;
+  }
+  .content li { margin-bottom: 3pt; text-align: justify; }
+
+  /* ===== TABLES ===== */
+  table.data-table {
+    width: 100%; border-collapse: collapse;
+    margin: 10pt 0 14pt 0; font-size: 11pt; line-height: 1.0;
+    page-break-inside: avoid;
+  }
+  table.data-table th, table.data-table td {
+    border: 1px solid #000; padding: 5pt 7pt;
+    text-align: left; vertical-align: top; line-height: 1.3;
+  }
+  table.data-table th {
+    background-color: #f0f0f0; font-weight: bold; text-align: center;
+  }
+  .table-label {
+    font-weight: bold; font-size: 11pt;
+    margin-bottom: 4pt; text-align: center;
+  }
+
+  /* ===== TOC ===== */
+  .toc-table { width: 100%; border-collapse: collapse; margin: 10pt 0; }
+  .toc-table td {
+    padding: 3pt 4pt; border: none; font-size: 12pt; line-height: 1.5;
+  }
+  .toc-table td:first-child { width: 50pt; }
+  .toc-table td:last-child { width: 50pt; text-align: right; }
+  .toc-table tr.toc-header td { font-weight: bold; }
+  .toc-table tr.toc-sub td { padding-left: 20pt; }
+
+  /* ===== FIGURE PLACEHOLDER ===== */
+  .figure-placeholder {
+    border: 2px dashed #999; padding: 24pt 16pt; text-align: center;
+    margin: 14pt auto; max-width: 460px; background: #fafafa;
+    font-style: italic; color: #666; font-size: 11pt;
+    page-break-inside: avoid;
+  }
+  .figure-caption {
+    text-align: center; font-size: 11pt; font-weight: bold;
+    margin-top: 4pt; margin-bottom: 12pt;
+  }
+
+  /* ===== CODE BLOCK ===== */
+  .code-block {
+    background: #f5f5f5; border: 1px solid #ddd;
+    padding: 8pt 12pt; font-family: 'Courier New', monospace;
+    font-size: 9pt; line-height: 1.35; margin: 8pt 0 12pt 0;
+    white-space: pre-wrap; word-wrap: break-word;
+    page-break-inside: avoid;
+  }
+
+  /* ===== REFERENCES ===== */
+  .reference-list p {
+    margin-bottom: 6pt; text-indent: -36pt;
+    padding-left: 36pt; font-size: 11pt;
+  }
+
+  .keywords strong { font-weight: bold; }
+
+  @media print {
+    body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .page-break { page-break-after: always; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ==================== TITLE PAGE ==================== -->
+<div class="title-page">
+  <div class="university">University of Mumbai</div>
+  <br>
+  <div class="college-name">Usha Pravin Gandhi College of Arts, Science and Commerce</div>
+  <div class="college-address">
+    Bhakti Vedanta Swami Marg, North-South Road No. 1<br>
+    Juhu Scheme, Vile Parle (West), Mumbai 400 056.
+  </div>
+  <div class="college-accr">Accreditation by NAAC A+ Grade with CGPA 3.27</div>
+  <div class="college-auto">(AUTONOMOUS)</div>
+  <br>
+  <div class="department">Department of Information Technology</div>
+
+  <hr class="title-hr">
+
+  <div class="project-label">Project Idea Proposal</div>
+  <div class="project-title">MealMentor AI</div>
+  <div class="project-subtitle">An AI-Powered Personalized Nutrition Analysis and Diet Recommendation Android Application</div>
+
+  <hr class="title-hr">
+
+  <div class="submitted-text">
+    Submitted in partial fulfillment of the requirements for the course<br>
+    <strong>Field Project (UIFPR310)</strong><br>
+    <strong>B. Sc. Information Technology &mdash; Semester V</strong>
+  </div>
+
+  <table class="info-table">
+    <tr><td>Submitted by:</td><td>Irfan Pathan</td></tr>
+    <tr><td>SAP ID:</td><td>53013240006</td></tr>
+  </table>
+
+  <div class="guide-section">
+    <strong>Under the Guidance of:</strong>
+    Dr. Prashant Chaudhary
+  </div>
+
+  <div class="programme-info">
+    Programme: B. Sc. Information Technology (2026&ndash;27) Semester V<br>
+    Course: Field Project &nbsp;&nbsp;|&nbsp;&nbsp; Code: UIFPR310
+  </div>
+  <div class="year">Academic Year: 2026 &ndash; 2027</div>
+</div>
+
+
+<!-- ==================== CERTIFICATE ==================== -->
+<div class="formal-page">
+  <h2>Certificate</h2>
+  <p>This is to certify that the project idea proposal titled <strong>&ldquo;MealMentor AI: An AI-Powered Personalized Nutrition Analysis and Diet Recommendation Android Application&rdquo;</strong> has been presented by <strong>Irfan Pathan (SAP ID: 53013240006)</strong>, a student of <strong>B. Sc. Information Technology, Semester V</strong>, at <strong>Usha Pravin Gandhi College of Arts, Science and Commerce (Autonomous), Mumbai</strong>.</p>
+  <p>The project idea has been reviewed and evaluated for its feasibility, technical soundness, and relevance to the course <strong>Field Project (UIFPR310)</strong> during the academic year <strong>2026&ndash;2027</strong>.</p>
+  <p>The proposed idea is hereby <strong>approved</strong> for further development and implementation under the guidance of the undersigned.</p>
+
+  <div class="signature-block">
+    <div class="signature-row">
+      <div class="signature-col">
+        <div class="line">&nbsp;</div><br>
+        <strong>Dr. Prashant Chaudhary</strong><br>
+        Project Guide<br>
+        Date: _______________
+      </div>
+      <div class="signature-col">
+        <div class="line">&nbsp;</div><br>
+        <strong>Head of Department</strong><br>
+        Dept. of Information Technology<br>
+        Date: _______________
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ==================== ACKNOWLEDGEMENT ==================== -->
+<div class="formal-page">
+  <h2>Acknowledgement</h2>
+  <p>I would like to express my sincere gratitude to my project guide, <strong>Dr. Prashant Chaudhary</strong>, for his invaluable guidance and constructive feedback during the ideation and proposal presentation of this project. His expertise and encouragement helped refine the concept and scope of MealMentor AI into a well-defined and feasible project idea.</p>
+  <p>I extend my heartfelt thanks to the <strong>Head of Department</strong> and the <strong>faculty members</strong> of the Department of Information Technology at <strong>Usha Pravin Gandhi College of Arts, Science and Commerce</strong> for providing the platform to present this idea and for their thoughtful suggestions during the review process.</p>
+  <p>I am also grateful to my family and friends for their unwavering support and motivation throughout this process.</p>
+  <div class="right-align">
+    <strong>Irfan Pathan</strong><br>
+    SAP ID: 53013240006
+  </div>
+</div>
+
+
+<!-- ==================== ABSTRACT ==================== -->
+<div class="formal-page">
+  <h2>Abstract</h2>
+  <p><strong>MealMentor AI</strong> is a proposed intelligent Android application that leverages artificial intelligence and cloud computing to serve as a personal diet coach. The application will enable users to photograph their meals, automatically identify the food items using computer vision (Azure OpenAI GPT-4o Vision), extract detailed nutritional information, and maintain a comprehensive daily food log.</p>
+  <p>The core differentiator of MealMentor AI is its <strong>AI Dietitian module</strong> &mdash; a context-aware conversational assistant that behaves like a professional dietitian. It will consider the user&rsquo;s complete health profile (age, weight, medical conditions, dietary preferences, allergies), parsed health reports (blood work, cholesterol levels), and the specific foods consumed on that day to provide highly personalized meal recommendations.</p>
+  <p>The application will feature interactive data visualization through detailed charts &mdash; calorie trend lines, macronutrient donut charts, weekly progress bar graphs, and nutrient radar charts. The complete system will be built on <strong>Microsoft Azure cloud services</strong> (App Service, PostgreSQL, Blob Storage, OpenAI Service), ensuring scalability, reliability, and enterprise-grade security.</p>
+  <p class="no-indent"><strong>Keywords:</strong> Artificial Intelligence, Nutrition Analysis, Computer Vision, Natural Language Processing, Diet Recommendation, Android Application, Azure Cloud Services, Health Informatics</p>
+</div>
+
+
+<!-- ==================== TABLE OF CONTENTS ==================== -->
+<div class="formal-page">
+  <h2>Table of Contents</h2>
+  <table class="toc-table">
+    <tr class="toc-header"><td></td><td>Certificate</td><td>ii</td></tr>
+    <tr class="toc-header"><td></td><td>Acknowledgement</td><td>iii</td></tr>
+    <tr class="toc-header"><td></td><td>Abstract</td><td>iv</td></tr>
+    <tr class="toc-header"><td>1</td><td>Introduction</td><td>1</td></tr>
+    <tr class="toc-sub"><td>1.1</td><td>Background</td><td>1</td></tr>
+    <tr class="toc-sub"><td>1.2</td><td>Objectives</td><td>1</td></tr>
+    <tr class="toc-sub"><td>1.3</td><td>Purpose, Scope, and Applicability</td><td>2</td></tr>
+    <tr class="toc-sub"><td>1.3.1</td><td>Purpose</td><td>2</td></tr>
+    <tr class="toc-sub"><td>1.3.2</td><td>Scope</td><td>2</td></tr>
+    <tr class="toc-sub"><td>1.3.3</td><td>Applicability</td><td>3</td></tr>
+    <tr class="toc-sub"><td>1.4</td><td>Achievements</td><td>3</td></tr>
+    <tr class="toc-sub"><td>1.5</td><td>Organization of Report</td><td>3</td></tr>
+    <tr class="toc-header"><td>2</td><td>Problem Statement</td><td>5</td></tr>
+    <tr class="toc-header"><td>3</td><td>Literature Survey</td><td>6</td></tr>
+    <tr class="toc-sub"><td>3.1</td><td>Existing Systems</td><td>6</td></tr>
+    <tr class="toc-sub"><td>3.2</td><td>Research Papers Reviewed</td><td>6</td></tr>
+    <tr class="toc-sub"><td>3.3</td><td>Comparative Analysis</td><td>6</td></tr>
+    <tr class="toc-header"><td>4</td><td>Proposed System</td><td>8</td></tr>
+    <tr class="toc-sub"><td>4.1</td><td>System Overview</td><td>8</td></tr>
+    <tr class="toc-sub"><td>4.2</td><td>Key Features</td><td>8</td></tr>
+    <tr class="toc-sub"><td>4.3</td><td>AI Dietitian &mdash; Core Differentiator</td><td>8</td></tr>
+    <tr class="toc-header"><td>5</td><td>System Architecture</td><td>10</td></tr>
+    <tr class="toc-header"><td>6</td><td>Technology Stack</td><td>12</td></tr>
+    <tr class="toc-header"><td>7</td><td>Implementation Plan &amp; Timeline</td><td>14</td></tr>
+    <tr class="toc-header"><td>8</td><td>Expected Outcomes &amp; Future Scope</td><td>15</td></tr>
+    <tr class="toc-header"><td>9</td><td>References</td><td>16</td></tr>
+  </table>
+</div>
+
+
+<!-- ==================== CHAPTER 1: INTRODUCTION ==================== -->
+<div class="content">
+  <h1 class="chapter-title">Chapter 1<br>Introduction</h1>
+
+  <h2 class="section-title">1.1 Background</h2>
+  <p>The global burden of diet-related diseases has reached unprecedented levels. According to the World Health Organization (WHO), unhealthy diets are among the top risk factors for non-communicable diseases (NCDs), which collectively account for approximately 71% of all deaths globally. In India, the National Family Health Survey (NFHS-5, 2019&ndash;2021) reports that 24% of adults are overweight or obese, while 18.7% of women and 16.2% of men are underweight &mdash; highlighting a dual burden of malnutrition.</p>
+  <p>Despite growing health consciousness in the post-COVID era, traditional methods of dietary tracking remain highly challenging. Manual food logging &mdash; manually searching databases, reading nutritional labels, or maintaining food diaries &mdash; is tedious, error-prone, and unsustainable. Research published in the <em>Journal of Medical Internet Research</em> indicates that manual food logging has an abandonment rate exceeding 60% within the first two weeks due to logging fatigue. Furthermore, generic calorie-tracking apps fail to provide personalized recommendations that account for individual medical conditions, blood work results, or daily dietary context.</p>
+  <p>Recent advancements in Artificial Intelligence, particularly in computer vision and Large Language Models (LLMs), present transformative opportunities to address these issues. Vision-capable models such as GPT-4o can now identify food items from photographs with remarkable accuracy, while conversational AI can provide personalized dietary guidance that was previously accessible only through expensive professional consultations. <strong>MealMentor AI</strong> is conceived at this intersection &mdash; an intelligent Android application combining AI-powered food recognition, automated nutritional analysis, comprehensive meal tracking, interactive data visualization, and a conversational AI dietitian.</p>
+
+  <h2 class="section-title">1.2 Objectives</h2>
+  <ol>
+    <li>To design and develop an Android application that uses AI-powered computer vision (Azure OpenAI GPT-4o) to identify food items from photographs and extract detailed nutritional information.</li>
+    <li>To implement a comprehensive daily meal tracking system with persistent food logging and progress monitoring against personalized targets.</li>
+    <li>To build an AI Dietitian chat module &mdash; a context-aware conversational assistant providing personalized meal recommendations based on health profile, medical conditions, and daily food intake.</li>
+    <li>To create interactive data visualizations (line charts, donut charts, bar graphs, radar charts) presenting nutritional trends over daily, weekly, and monthly periods.</li>
+    <li>To implement health report analysis that allows users to upload medical reports for AI-based parsing, integrating extracted health markers into dietary recommendations.</li>
+    <li>To deploy the backend on Microsoft Azure cloud services, demonstrating proficiency in cloud-native application development.</li>
+  </ol>
+
+  <h2 class="section-title">1.3 Purpose, Scope, and Applicability</h2>
+  
+  <h3 class="subsection-title">1.3.1 Purpose</h3>
+  <p>The primary purpose of MealMentor AI is to bridge the accessibility gap in personalized nutrition guidance. Professional dietitian consultations cost &#8377;500&ndash;&#8377;2,000 per session in India, making them financially inaccessible to a significant portion of the population. By providing a 24/7 AI-powered dietitian, MealMentor AI democratizes access to tailored dietary advice. Additionally, it aims to reduce manual logging fatigue through image-based food identification, eliminate inaccurate self-reporting, and connect isolated health data (such as blood work) directly to daily meal choices.</p>
+
+  <h3 class="subsection-title">1.3.2 Scope</h3>
+  <p class="no-indent"><strong>In Scope:</strong></p>
+  <ul>
+    <li>Android mobile application using React Native (Expo)</li>
+    <li>AI-powered food image recognition and nutritional analysis</li>
+    <li>User authentication and health profile management</li>
+    <li>Daily meal logging (AI-assisted and manual entry)</li>
+    <li>Interactive nutritional charts and analytics dashboard</li>
+    <li>Conversational AI Dietitian with context-aware recommendations</li>
+    <li>Health report upload and AI-based parsing</li>
+    <li>Cloud deployment on Microsoft Azure</li>
+  </ul>
+  <p class="no-indent"><strong>Out of Scope:</strong></p>
+  <ul>
+    <li>iOS application (future extension via React Native cross-platform)</li>
+    <li>Wearable device integration</li>
+    <li>Barcode/QR code scanning for packaged foods</li>
+    <li>Multi-language support (English only in current version)</li>
+  </ul>
+
+  <h3 class="subsection-title">1.3.3 Applicability</h3>
+  <p>MealMentor AI is highly applicable in various real-world scenarios:</p>
+  <ol>
+    <li><strong>Personal Health Tracking:</strong> Individuals seeking to maintain a healthy lifestyle, lose weight, or track macronutrients and micronutrients efficiently.</li>
+    <li><strong>Chronic Disease Management:</strong> Patients managing diet-sensitive conditions such as diabetes, hypertension, obesity, or cardiovascular diseases can align their meals with clinical targets.</li>
+    <li><strong>Clinical Follow-ups:</strong> Healthcare professionals can use the parsed reports and meal history to monitor patients' compliance with dietary recommendations.</li>
+    <li><strong>Corporate Wellness:</strong> Organizations can deploy the platform to improve employee health outcomes by promoting healthy eating habits.</li>
+  </ol>
+
+  <h2 class="section-title">1.4 Achievements</h2>
+  <p>The system aims to achieve several key milestones:</p>
+  <ol>
+    <li><strong>Frictionless Food Logging:</strong> Reducing food logging time by over 80% through one-tap image recognition instead of database searching.</li>
+    <li><strong>High Recognition Accuracy:</strong> Achieving at least 85% accuracy in identifying food items and portion sizes from images.</li>
+    <li><strong>Hyper-Personalized Guidance:</strong> Delivering context-aware meal recommendations that dynamically adjust based on user profile, blood reports, and current daily intake.</li>
+    <li><strong>Scalable Cloud Infrastructure:</strong> Establishing a robust, secure, and cost-effective backend architecture using Microsoft Azure services.</li>
+  </ol>
+
+  <h2 class="section-title">1.5 Organization of Report</h2>
+  <p>The project report is organized as follows:</p>
+  <ul>
+    <li><strong>Chapter 1: Introduction</strong> &ndash; Outlines the project background, objectives, purpose, scope, applicability, achievements, and report structure.</li>
+    <li><strong>Chapter 2: Problem Statement</strong> &ndash; Identifies key challenges in current dietary management systems and outlines how MealMentor AI addresses them.</li>
+    <li><strong>Chapter 3: Literature Survey</strong> &ndash; Reviews existing applications and research papers in food recognition and LLMs, highlighting the research gap.</li>
+    <li><strong>Chapter 4: Proposed System</strong> &ndash; Explains the system overview, key features, and details the conversational AI dietitian module.</li>
+    <li><strong>Chapter 5: System Architecture</strong> &ndash; Illustrates the high-level architecture, key data flows, and database design.</li>
+    <li><strong>Chapter 6: Technology Stack</strong> &ndash; Details the frontend, backend, and cloud services utilized, along with hardware and software requirements.</li>
+    <li><strong>Chapter 7: Implementation Plan &amp; Timeline</strong> &ndash; Presents the 20-week phased schedule and Gantt chart.</li>
+    <li><strong>Chapter 8: Expected Outcomes &amp; Future Scope</strong> &ndash; Summarizes expected results and details future project extensions.</li>
+    <li><strong>Chapter 9: References</strong> &ndash; Lists academic papers, documentation, and resources cited.</li>
+  </ul>
+</div>
+
+
+<!-- ==================== CHAPTER 2: PROBLEM STATEMENT ==================== -->
+<div class="content">
+  <h1 class="chapter-title">Chapter 2<br>Problem Statement</h1>
+
+  <p class="no-indent">The current landscape of dietary management presents several critical challenges that MealMentor AI aims to solve:</p>
+
+  <table class="data-table">
+    <tr><th style="width:5%">No.</th><th style="width:30%">Problem</th><th style="width:30%">Description</th><th style="width:35%">MealMentor AI Solution</th></tr>
+    <tr>
+      <td>P1</td>
+      <td><strong>Inaccurate Self-Reporting</strong></td>
+      <td>Studies in the <em>BMJ</em> reveal individuals underreport caloric intake by 30&ndash;50% with manual logging methods.</td>
+      <td>AI-powered food image recognition eliminates manual guesswork; GPT-4o Vision identifies food items and portions from photographs.</td>
+    </tr>
+    <tr>
+      <td>P2</td>
+      <td><strong>High Abandonment Rates</strong></td>
+      <td>Nutrition apps have an average 30-day retention rate of only 14.3% (Statista, 2024) due to tedious manual food entry.</td>
+      <td>One-tap meal logging via camera reduces friction; engaging charts and AI conversations maintain user interest.</td>
+    </tr>
+    <tr>
+      <td>P3</td>
+      <td><strong>Generic Recommendations</strong></td>
+      <td>Most apps provide standardized dietary advice, failing to account for individual health conditions, blood work, allergies, or daily intake context.</td>
+      <td>Context-aware AI Dietitian considers complete health profile + today&rsquo;s meals + nutritional gaps for hyper-personalized advice.</td>
+    </tr>
+    <tr>
+      <td>P4</td>
+      <td><strong>Disconnected Health Data</strong></td>
+      <td>Health reports (blood work, checkups) exist in isolation from dietary tracking, with no automated connection to recommendations.</td>
+      <td>Health report upload feature parses blood work and integrates findings directly into dietary recommendations.</td>
+    </tr>
+    <tr>
+      <td>P5</td>
+      <td><strong>Expensive Professional Guidance</strong></td>
+      <td>Dietitian consultations cost &#8377;500&ndash;&#8377;2,000+ per session, financially inaccessible for most.</td>
+      <td>AI Dietitian provides 24/7 personalized nutrition guidance at no per-consultation cost.</td>
+    </tr>
+  </table>
+</div>
+
+
+<!-- ==================== CHAPTER 3: LITERATURE SURVEY ==================== -->
+<div class="content">
+  <h1 class="chapter-title">Chapter 3<br>Literature Survey</h1>
+
+  <h2 class="section-title">3.1 Existing Systems</h2>
+
+  <p><strong>MyFitnessPal</strong> (200M+ users) maintains a database of 14+ million food items with manual entry and barcode scanning, but lacks AI-powered food recognition and contextual intelligence.</p>
+
+  <p><strong>HealthifyMe</strong> is an India-focused platform offering calorie tracking and human dietitian consultations (premium: &#8377;999&ndash;&#8377;4,999/month). Its &ldquo;Snap&rdquo; feature uses basic image recognition but lacks a conversational AI dietitian.</p>
+
+  <p><strong>Lose It!</strong> offers &ldquo;Snap It&rdquo; food recognition from photos but supports limited food categories and lacks context-aware recommendations or health report integration.</p>
+
+  <p><strong>Yazio</strong> is a European calorie counter with barcode scanning and meal planning but no AI-powered food recognition or conversational dietary guidance.</p>
+
+  <h2 class="section-title">3.2 Research Papers Reviewed</h2>
+
+  <p><strong>[1] Mezgec &amp; Korou&scaron;i&#263; Seljak (2017)</strong> &mdash; &ldquo;NutriNet&rdquo; achieved 86.72% top-5 accuracy using CNNs for food recognition across 520 categories. Validates AI-based food recognition viability; MealMentor AI uses more advanced GPT-4o Vision.</p>
+
+  <p><strong>[2] Bossard et al. (2014)</strong> &mdash; Introduced the Food-101 dataset (101,000 images, 101 categories), establishing benchmarks for food recognition models.</p>
+
+  <p><strong>[3] Sahoo et al. (2019)</strong> &mdash; &ldquo;FoodAI&rdquo; proposed multi-task learning for simultaneous food recognition, ingredient detection, and nutritional estimation &mdash; validating the pipeline approach used in MealMentor AI.</p>
+
+  <p><strong>[4] Vaswani et al. (2017)</strong> &mdash; &ldquo;Attention Is All You Need&rdquo; introduced the Transformer architecture, the foundation of GPT-4o and all modern LLMs powering this project.</p>
+
+  <p><strong>[5] Achiam et al. (2023)</strong> &mdash; GPT-4 Technical Report details multimodal (vision) capabilities for understanding images alongside text, directly relevant to MealMentor AI&rsquo;s food analysis.</p>
+
+  <h2 class="section-title">3.3 Comparative Analysis</h2>
+  <p class="table-label">Table 3.1: Comparison of Existing Nutrition Applications</p>
+  <table class="data-table">
+    <tr>
+      <th>Feature</th><th>MyFitnessPal</th><th>HealthifyMe</th><th>Lose It!</th><th>Yazio</th><th>MealMentor AI</th>
+    </tr>
+    <tr><td>AI Food Image Recognition</td><td>&#10060;</td><td>Basic</td><td>Limited</td><td>&#10060;</td><td><strong>&#10004; GPT-4o</strong></td></tr>
+    <tr><td>Detailed Nutrition Charts</td><td>Basic</td><td>Basic</td><td>Basic</td><td>&#10004;</td><td><strong>&#10004; Advanced</strong></td></tr>
+    <tr><td>Conversational AI Dietitian</td><td>&#10060;</td><td>&#10060;</td><td>&#10060;</td><td>&#10060;</td><td><strong>&#10004;</strong></td></tr>
+    <tr><td>Context-Aware Suggestions</td><td>&#10060;</td><td>Limited</td><td>&#10060;</td><td>&#10060;</td><td><strong>&#10004;</strong></td></tr>
+    <tr><td>Health Report Integration</td><td>&#10060;</td><td>&#10060;</td><td>&#10060;</td><td>&#10060;</td><td><strong>&#10004;</strong></td></tr>
+    <tr><td>Micronutrient Tracking</td><td>Premium</td><td>Limited</td><td>Premium</td><td>Premium</td><td><strong>&#10004; Free</strong></td></tr>
+    <tr><td>Cloud Platform</td><td>AWS</td><td>AWS</td><td>AWS</td><td>GCP</td><td><strong>Azure</strong></td></tr>
+  </table>
+
+  <p class="no-indent"><strong>Research Gap:</strong> No existing consumer app integrates GPT-4o-level vision models with a conversational AI dietitian that considers daily meal context and parsed health reports. MealMentor AI fills this gap.</p>
+</div>
+
+
+<!-- ==================== CHAPTER 4: PROPOSED SYSTEM ==================== -->
+<div class="content">
+  <h1 class="chapter-title">Chapter 4<br>Proposed System</h1>
+
+  <h2 class="section-title">4.1 System Overview</h2>
+  <p>MealMentor AI is a three-tier Android application:</p>
+  <ol>
+    <li><strong>Presentation Tier:</strong> React Native (Expo) mobile app with 10+ screens.</li>
+    <li><strong>Application Tier:</strong> Node.js + Express RESTful API deployed on Azure App Service with 15+ endpoints.</li>
+    <li><strong>Data Tier:</strong> Azure PostgreSQL (pgvector), Azure Blob Storage, and Azure OpenAI Service (GPT-4o + ada-002).</li>
+  </ol>
+
+  <h2 class="section-title">4.2 Key Features</h2>
+  <table class="data-table">
+    <tr><th style="width:5%">#</th><th style="width:28%">Feature</th><th>Description</th></tr>
+    <tr><td>1</td><td><strong>AI Food Recognition</strong></td><td>Photograph meals &rarr; GPT-4o Vision identifies food items, estimates portions, extracts calories, macros (protein, carbs, fat), and micronutrients (vitamins, minerals).</td></tr>
+    <tr><td>2</td><td><strong>Daily Meal Tracking</strong></td><td>Every meal logged with timestamp, meal type, nutritional data, and photo. Dashboard shows real-time progress toward daily targets with circular progress indicators.</td></tr>
+    <tr><td>3</td><td><strong>Interactive Charts</strong></td><td>Calorie trend line chart, macronutrient donut chart, weekly stacked bar chart, and nutrient radar chart &mdash; with daily/weekly/monthly views.</td></tr>
+    <tr><td>4</td><td><strong>AI Dietitian Chat</strong></td><td>Conversational AI with access to user&rsquo;s complete health profile, today&rsquo;s meals, nutritional gaps, and health reports. Provides personalized meal advice.</td></tr>
+    <tr><td>5</td><td><strong>Health Report Parsing</strong></td><td>Upload blood work/medical reports &rarr; AI extracts cholesterol, blood sugar, vitamin levels, thyroid markers &rarr; factors into all dietary recommendations.</td></tr>
+    <tr><td>6</td><td><strong>Proactive Suggestions</strong></td><td>Based on time of day and nutritional gaps, app suggests 3 meals that optimally fill remaining nutritional needs while respecting all health constraints.</td></tr>
+    <tr><td>7</td><td><strong>Meal History</strong></td><td>Searchable calendar view of all past meals with complete nutritional data for long-term tracking.</td></tr>
+  </table>
+
+  <h2 class="section-title">4.3 AI Dietitian &mdash; Core Differentiator</h2>
+  <p>The AI Dietitian is the flagship feature that sets MealMentor AI apart. Every AI interaction builds a rich context from:</p>
+  <ol>
+    <li>User profile (age, weight, conditions, preferences, allergies)</li>
+    <li>Parsed health report data (blood markers, vitamin levels)</li>
+    <li>Today&rsquo;s complete meal log with nutritional totals</li>
+    <li>Calculated remaining nutritional budget (calories, protein, carbs, fat)</li>
+    <li>Identified nutritional gaps (nutrients below 50% daily value)</li>
+    <li>7-day meal history for pattern recognition</li>
+  </ol>
+  <p class="no-indent"><strong>Example Interaction:</strong></p>
+  <p class="no-indent" style="margin-left:20pt; font-style:italic;">&ldquo;I had poha for breakfast and chole chawal for lunch. What should I eat for dinner?&rdquo;</p>
+  <p class="no-indent" style="margin-left:20pt;">&#8594; The AI calculates remaining caloric budget (~600 cal), identifies low protein (35g of 80g target), and suggests high-protein dinners respecting the user&rsquo;s vegetarian preference and lactose intolerance, with specific nutritional breakdowns for each suggestion.</p>
+</div>
+
+
+<!-- ==================== CHAPTER 5: SYSTEM ARCHITECTURE ==================== -->
+<div class="content">
+  <h1 class="chapter-title">Chapter 5<br>System Architecture</h1>
+
+  <h2 class="section-title">5.1 High-Level Architecture</h2>
+  <div style="text-align: center; margin: 16pt auto; page-break-inside: avoid;">
+    <img src="diagrams/fig_5_1_system_architecture.png" alt="High-Level System Architecture" style="max-width: 100%; height: auto; border: 1px solid #ccc; border-radius: 4px;" />
+  </div>
+  <p class="figure-caption">Figure 5.1: High-Level System Architecture of MealMentor AI</p>
+
+  <h2 class="section-title">5.2 Key Data Flows</h2>
+
+  <h3 class="subsection-title">Food Image Analysis Flow</h3>
+  <div class="code-block">User captures photo → App sends to API → API uploads to Blob Storage
+→ API sends image to GPT-4o Vision → GPT-4o identifies food + nutrition
+→ API stores in PostgreSQL (meals + nutrition_entries tables)
+→ API generates personalized recommendation using user profile context
+→ Results returned to app with charts-ready data</div>
+
+  <h3 class="subsection-title">AI Dietitian Chat Flow</h3>
+  <div class="code-block">User types message → App sends to API → API fetches from DB:
+  - User profile + health conditions + allergies
+  - Today's meals + nutrition totals + remaining budget
+  - Health report markers + recent chat history
+→ API builds context-rich system prompt
+→ Sends to GPT-4o → Response returned to app → Stored in chat history</div>
+
+  <h2 class="section-title">5.3 Database Overview</h2>
+  <p class="no-indent">The database consists of <strong>6 tables</strong> built on PostgreSQL with the pgvector extension:</p>
+  <table class="data-table">
+    <tr><th>Table</th><th>Purpose</th><th>Key Columns</th></tr>
+    <tr><td><strong>users</strong></td><td>User profiles &amp; health data</td><td>email, age, height, weight, goals, dietary_preferences, allergies, health_conditions, embedding</td></tr>
+    <tr><td><strong>meals</strong></td><td>Logged meals</td><td>user_id, meal_type, name, image_url, logged_at</td></tr>
+    <tr><td><strong>nutrition_entries</strong></td><td>Per-item nutrition data</td><td>meal_id, food_name, calories, protein, carbs, fat, vitamins, minerals</td></tr>
+    <tr><td><strong>health_reports</strong></td><td>Uploaded medical reports</td><td>user_id, report_type, file_url, parsed_data (JSONB)</td></tr>
+    <tr><td><strong>chat_messages</strong></td><td>AI Dietitian conversation</td><td>user_id, role, content, created_at</td></tr>
+    <tr><td><strong>daily_summaries</strong></td><td>Pre-computed daily totals</td><td>user_id, date, total_calories, total_protein, total_carbs, total_fat</td></tr>
+  </table>
+</div>
+
+
+<!-- ==================== CHAPTER 6: TECHNOLOGY STACK ==================== -->
+<div class="content">
+  <h1 class="chapter-title">Chapter 6<br>Technology Stack</h1>
+
+  <p class="table-label">Table 6.1: Complete Technology Stack</p>
+  <table class="data-table">
+    <tr><th style="width:18%">Layer</th><th style="width:30%">Technology</th><th>Purpose</th></tr>
+    <tr><td rowspan="5"><strong>Frontend<br>(Mobile App)</strong></td><td>React Native + Expo</td><td>Cross-platform Android app framework</td></tr>
+    <tr><td>React Navigation 6.x</td><td>Screen routing &amp; navigation</td></tr>
+    <tr><td>Victory Native / Chart Kit</td><td>Interactive charts &amp; data visualization</td></tr>
+    <tr><td>React Native Gifted Chat</td><td>Chat UI for AI Dietitian</td></tr>
+    <tr><td>Expo Camera + Image Picker</td><td>Camera access &amp; gallery selection</td></tr>
+    <tr><td rowspan="5"><strong>Backend<br>(Server)</strong></td><td>Node.js 20 LTS</td><td>JavaScript runtime</td></tr>
+    <tr><td>Express.js 4.x</td><td>REST API framework</td></tr>
+    <tr><td>bcryptjs + jsonwebtoken</td><td>Password hashing &amp; JWT authentication</td></tr>
+    <tr><td>multer</td><td>File upload middleware</td></tr>
+    <tr><td>pg (node-postgres)</td><td>PostgreSQL client</td></tr>
+    <tr><td rowspan="4"><strong>Azure Cloud<br>Services</strong></td><td>Azure App Service (B1)</td><td>Host Node.js backend API</td></tr>
+    <tr><td>Azure Database for PostgreSQL</td><td>Primary database with pgvector extension</td></tr>
+    <tr><td>Azure Blob Storage</td><td>Store food images &amp; health reports</td></tr>
+    <tr><td>Azure OpenAI Service</td><td>GPT-4o (vision + chat) &amp; ada-002 (embeddings)</td></tr>
+    <tr><td rowspan="2"><strong>AI / ML</strong></td><td>GPT-4o</td><td>Food image analysis, dietitian chat, report parsing</td></tr>
+    <tr><td>text-embedding-ada-002</td><td>1536-dim vector embeddings for similarity matching</td></tr>
+  </table>
+
+  <h2 class="section-title">6.1 Hardware &amp; Software Requirements</h2>
+  <table class="data-table">
+    <tr><th>Component</th><th>Development</th><th>End User</th></tr>
+    <tr><td>OS</td><td>Windows 10/11, macOS, or Ubuntu</td><td>Android 10+ (API 29)</td></tr>
+    <tr><td>Processor</td><td>Intel i5 / Ryzen 5 or above</td><td>Any modern mobile processor</td></tr>
+    <tr><td>RAM</td><td>8 GB minimum</td><td>4 GB minimum</td></tr>
+    <tr><td>Storage</td><td>50 GB free space</td><td>200 MB for app</td></tr>
+    <tr><td>Network</td><td>Broadband internet</td><td>4G / Wi-Fi</td></tr>
+    <tr><td>Camera</td><td>N/A</td><td>8 MP or higher</td></tr>
+    <tr><td>Tools</td><td>Node.js 20, Android Studio, Expo CLI, VS Code, Git</td><td>Expo Go / APK</td></tr>
+  </table>
+</div>
+
+
+<!-- ==================== CHAPTER 7: IMPLEMENTATION PLAN ==================== -->
+<div class="content">
+  <h1 class="chapter-title">Chapter 7<br>Implementation Plan &amp; Timeline</h1>
+
+  <p class="table-label">Table 7.1: Phased Implementation Schedule (20 Weeks)</p>
+  <table class="data-table">
+    <tr><th>Phase</th><th>Duration</th><th>Key Tasks</th><th>Deliverables</th></tr>
+    <tr>
+      <td><strong>1. Setup</strong></td><td>Week 1&ndash;2</td>
+      <td>Azure services provisioning; project initialization; database schema</td>
+      <td>Working dev environment</td>
+    </tr>
+    <tr>
+      <td><strong>2. Auth &amp; Profile</strong></td><td>Week 3&ndash;4</td>
+      <td>User registration/login (JWT); profile setup screen &amp; API</td>
+      <td>Functional auth flow</td>
+    </tr>
+    <tr>
+      <td><strong>3. Food Analysis</strong></td><td>Week 5&ndash;7</td>
+      <td>Camera UI; GPT-4o Vision integration; nutrition parsing; meal storage</td>
+      <td>Photo &rarr; nutrition pipeline</td>
+    </tr>
+    <tr>
+      <td><strong>4. Tracking</strong></td><td>Week 8&ndash;9</td>
+      <td>Dashboard with progress indicators; daily summaries; meal history</td>
+      <td>Complete meal tracking</td>
+    </tr>
+    <tr>
+      <td><strong>5. Charts</strong></td><td>Week 10&ndash;11</td>
+      <td>Line chart, donut chart, bar chart, radar chart; trends API</td>
+      <td>Analytics dashboard</td>
+    </tr>
+    <tr>
+      <td><strong>6. AI Dietitian</strong></td><td>Week 12&ndash;14</td>
+      <td>Chat UI; context builder; GPT-4o integration; meal suggestions</td>
+      <td>Working AI dietitian</td>
+    </tr>
+    <tr>
+      <td><strong>7. Health Reports</strong></td><td>Week 15&ndash;16</td>
+      <td>Report upload; AI parsing; health marker storage &amp; integration</td>
+      <td>Health report feature</td>
+    </tr>
+    <tr>
+      <td><strong>8. Polish</strong></td><td>Week 17&ndash;18</td>
+      <td>Animations; error handling; testing; performance optimization</td>
+      <td>Production-quality app</td>
+    </tr>
+    <tr>
+      <td><strong>9. Deploy</strong></td><td>Week 19&ndash;20</td>
+      <td>Azure deployment; signed APK; project documentation; demo video</td>
+      <td>Final deliverables</td>
+    </tr>
+  </table>
+
+  <div style="text-align: center; margin: 16pt auto; page-break-inside: avoid;">
+    <img src="diagrams/fig_7_1_gantt_chart.png" alt="Gantt Chart Project Timeline" style="max-width: 100%; height: auto; border: 1px solid #ccc; border-radius: 4px;" />
+  </div>
+  <p class="figure-caption">Figure 7.1: Gantt Chart &mdash; Project Implementation Timeline</p>
+</div>
+
+
+<!-- ==================== CHAPTER 8: OUTCOMES & FUTURE ==================== -->
+<div class="content">
+  <h1 class="chapter-title">Chapter 8<br>Expected Outcomes &amp; Future Scope</h1>
+
+  <h2 class="section-title">8.1 Expected Outcomes</h2>
+  <ol>
+    <li>A <strong>fully functional Android application (APK)</strong> enabling users to photograph meals and receive instant AI-powered nutritional analysis with at least 85% food identification accuracy.</li>
+    <li>An operational <strong>AI Dietitian</strong> providing personalized, context-aware dietary recommendations that simulate professional dietitian consultation quality.</li>
+    <li><strong>Interactive nutritional dashboards</strong> with four chart types (line, donut, bar, radar) transforming raw data into actionable visual insights.</li>
+    <li>A <strong>scalable cloud-native backend</strong> deployed on Microsoft Azure, demonstrating proficiency in modern cloud computing practices.</li>
+    <li><strong>Health report parsing</strong> that bridges the gap between clinical data and daily dietary choices.</li>
+  </ol>
+
+  <h2 class="section-title">8.2 Future Scope</h2>
+  <ol>
+    <li><strong>iOS Application:</strong> Leverage React Native&rsquo;s cross-platform capability to publish on Apple App Store.</li>
+    <li><strong>Barcode &amp; Label Scanning:</strong> Integrate barcode scanning for packaged foods via Open Food Facts API.</li>
+    <li><strong>Wearable Integration:</strong> Connect with Google Fit/Samsung Health for activity-aware dietary recommendations.</li>
+    <li><strong>Weekly Meal Plans:</strong> Generate complete meal plans with grocery lists and recipes.</li>
+    <li><strong>Multi-Language Support:</strong> Hindi, Marathi, Tamil, and other regional languages.</li>
+    <li><strong>Restaurant Menu Integration:</strong> Analyze Zomato/Swiggy menus to suggest healthiest options.</li>
+    <li><strong>Predictive Health Alerts:</strong> Use dietary trends to predict and prevent health risks.</li>
+    <li><strong>Offline AI Mode:</strong> On-device inference using TensorFlow Lite for basic recognition without internet.</li>
+  </ol>
+</div>
+
+
+<!-- ==================== CHAPTER 9: REFERENCES ==================== -->
+<div class="content">
+  <h1 class="chapter-title">Chapter 9<br>References</h1>
+
+  <div class="reference-list">
+    <p>[1] Mezgec, S., &amp; Korou&scaron;i&#263; Seljak, B. (2017). NutriNet: A Deep Learning Food and Drink Image Recognition System for Dietary Assessment. <em>Nutrients</em>, 9(7), 657.</p>
+
+    <p>[2] Bossard, L., Guillaumin, M., &amp; Van Gool, L. (2014). Food-101 &ndash; Mining Discriminative Components with Random Forests. <em>European Conference on Computer Vision (ECCV)</em>, 446&ndash;461.</p>
+
+    <p>[3] Sahoo, D., Hao, W., Ke, S., et al. (2019). FoodAI: Food Image Recognition via Deep Learning for Smart Food Logging. <em>ACM SIGKDD 2019</em>.</p>
+
+    <p>[4] Vaswani, A., et al. (2017). Attention Is All You Need. <em>Advances in NeurIPS</em>, 30.</p>
+
+    <p>[5] Achiam, J., et al. (2023). GPT-4 Technical Report. <em>OpenAI</em>. https://arxiv.org/abs/2303.08774</p>
+
+    <p>[6] Mifflin, M.D., et al. (1990). A new predictive equation for resting energy expenditure. <em>American Journal of Clinical Nutrition</em>, 51(2), 241&ndash;247.</p>
+
+    <p>[7] World Health Organization. (2021). <em>Noncommunicable diseases: Key facts</em>. https://www.who.int/news-room/fact-sheets/detail/noncommunicable-diseases</p>
+
+    <p>[8] IIPS. (2021). <em>National Family Health Survey (NFHS-5), 2019-2021: India Report</em>. Ministry of Health &amp; Family Welfare, Govt. of India.</p>
+
+    <p>[9] Microsoft Azure. (2024). <em>Azure OpenAI Service Documentation</em>. https://learn.microsoft.com/en-us/azure/ai-services/openai/</p>
+
+    <p>[10] Microsoft Azure. (2024). <em>Azure Database for PostgreSQL</em>. https://learn.microsoft.com/en-us/azure/postgresql/</p>
+
+    <p>[11] React Native. (2024). <em>Getting Started</em>. https://reactnative.dev/docs/getting-started</p>
+
+    <p>[12] Expo. (2024). <em>Introduction to Expo</em>. https://docs.expo.dev/</p>
+
+    <p>[13] pgvector. (2024). <em>Open-source vector similarity search for Postgres</em>. https://github.com/pgvector/pgvector</p>
+  </div>
+</div>
+
+</body>
+</html>

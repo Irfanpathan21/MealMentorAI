@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>MealMentor AI - Chapter 2: Survey of Technologies</title>
+<style>
+  @page {
+    size: A4;
+    margin: 0.8in 0.9in 0.8in 1.25in;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 10.5pt;
+    line-height: 1.35;
+    color: #000;
+    background: #fff;
+  }
+  
+  .chapter-header {
+    text-align: center;
+    margin-top: 4pt;
+    margin-bottom: 12pt;
+  }
+  .chapter-number {
+    font-size: 14pt;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 2pt;
+  }
+  .chapter-title {
+    font-size: 15pt;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+  }
+
+  h2 {
+    font-size: 12pt;
+    font-weight: bold;
+    margin-top: 10pt;
+    margin-bottom: 4pt;
+    color: #000;
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  h3 {
+    font-size: 10.5pt;
+    font-weight: bold;
+    margin-top: 8pt;
+    margin-bottom: 3pt;
+    color: #000;
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  h4 {
+    font-size: 10pt;
+    font-weight: bold;
+    font-style: italic;
+    margin-top: 6pt;
+    margin-bottom: 2pt;
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  p {
+    text-align: justify;
+    margin-bottom: 4.5pt;
+    text-indent: 18pt;
+    orphans: 2;
+    widows: 2;
+  }
+
+  p.no-indent {
+    text-indent: 0;
+  }
+
+  ul, ol {
+    margin-left: 22pt;
+    margin-bottom: 4.5pt;
+  }
+
+  li {
+    margin-bottom: 2.5pt;
+    text-align: justify;
+  }
+
+  .table-box {
+    margin-top: 4pt;
+    margin-bottom: 7pt;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .table-title {
+    font-size: 9.5pt;
+    font-weight: bold;
+    margin-bottom: 3pt;
+    text-align: left;
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 8.5pt;
+    line-height: 1.25;
+  }
+
+  th, td {
+    border: 1px solid #000;
+    padding: 3.5pt 5pt;
+    text-align: left;
+    vertical-align: top;
+  }
+
+  th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 8pt;
+  }
+
+  .page-break {
+    page-break-before: always;
+    break-before: page;
+  }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 (Report Page 6): CHAPTER HEADER, 2.1 FRONTEND, COMPARISON TABLE & INTRO -->
+<div class="chapter-header">
+  <div class="chapter-number">CHAPTER 2</div>
+  <div class="chapter-title">SURVEY OF TECHNOLOGIES</div>
+</div>
+
+<h2>2.1 Frontend:</h2>
+<p>The frontend for <strong>MealMentor AI</strong> is developed as an intelligent Android mobile application responsible for capturing food photographs, uploading medical lab reports, rendering real-time interactive nutritional charts, and hosting the conversational AI Dietitian interface.</p>
+
+<h3>2.1.1 Comparison with Other Frameworks</h3>
+<div class="table-box">
+  <div class="table-title">Table 2.1: Comparison of Frontend Mobile Frameworks</div>
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 20%;">Aspect</th>
+        <th style="width: 28%;">React Native (Expo)</th>
+        <th style="width: 26%;">Flutter</th>
+        <th style="width: 26%;">Native Android (Kotlin / Java)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Development Speed</strong></td>
+        <td>Faster due to JavaScript/JSX ecosystem, instant Hot Reloading, and pre-built Expo modules.</td>
+        <td>Good, but requires learning Dart and complex widget tree hierarchies.</td>
+        <td>Slower, requiring separate codebases for Android and iOS.</td>
+      </tr>
+      <tr>
+        <td><strong>Performance</strong></td>
+        <td>Near-native performance as it compiles to native views with direct JSI bridge execution.</td>
+        <td>Near-native performance compiled directly to machine code via Skia engine.</td>
+        <td>Excellent, as it is platform-native direct hardware code.</td>
+      </tr>
+      <tr>
+        <td><strong>User Interface (UI)</strong></td>
+        <td>Consistent, highly customizable UI using Flexbox, organic squircles, and glassmorphic blurs.</td>
+        <td>Consistent UI on all platforms thanks to its own rendering engine.</td>
+        <td>Excellent UI customization, but requires duplication of effort per platform.</td>
+      </tr>
+      <tr>
+        <td><strong>Codebase</strong></td>
+        <td>Single codebase for Android, iOS, and Web.</td>
+        <td>Single codebase for iOS, Android, and Desktop.</td>
+        <td>Two separate codebases (Kotlin for Android, Swift for iOS).</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h3>2.1.2 React Native & Expo</h3>
+<h4>2.1.2.1 What is React Native?</h4>
+<p>React Native is an open-source mobile application framework created by Meta for building natively compiled mobile applications from a single JavaScript/TypeScript codebase.</p>
+<ul>
+  <li><strong>Expo SDK:</strong> Managed toolset providing streamlined camera access, image picking, and file management without complex native build configurations.</li>
+  <li><strong>React Navigation:</strong> Manages seamless stack and bottom-tab screen routing across dashboards and chat views.</li>
+  <li><strong>React Native Chart Kit:</strong> Renders responsive SVG charts (line graphs, donut macro rings, and radar charts).</li>
+  <li><strong>React Context & Axios:</strong> Handles global application state and asynchronous REST API communication.</li>
+</ul>
+
+<div class="page-break"></div>
+
+<!-- PAGE 2 (Report Page 7): FRONTEND FEATURES, PROS/CONS & BACKEND INTRO -->
+<h3>2.1.3 Features of the Frontend Stack</h3>
+<ul>
+  <li><strong>Cross-Platform Compatibility:</strong> Single codebase targeting Android with direct extensibility to iOS.</li>
+  <li><strong>Rich UI Components:</strong> Organic squircle cards, glassmorphic frosted overlays, and vibrant progress rings designed for health and diet tracking.</li>
+  <li><strong>Hot Reload & Fast Refresh:</strong> Instantaneous code reflection drastically speeding up development and UI fine-tuning.</li>
+  <li><strong>Real-Time Visualization:</strong> Dynamic recalculation of daily calorie budgets and macro bars upon logging meals.</li>
+</ul>
+
+<h3>2.1.4 Advantages</h3>
+<ul>
+  <li><strong>Cost-Effective & Rapid Development:</strong> Single codebase eliminates duplicate engineering efforts.</li>
+  <li><strong>High Performance:</strong> Fluid 60 FPS animations and fast screen transitions.</li>
+  <li><strong>Extensive Ecosystem:</strong> Access to thousands of battle-tested NPM libraries for camera, charts, and storage.</li>
+</ul>
+
+<h3>2.1.5 Disadvantages</h3>
+<ul>
+  <li><strong>Bridge Overhead:</strong> High-frequency image manipulations require asynchronous background transfers.</li>
+  <li><strong>Native Modules:</strong> Deep platform-specific hardware customizations require custom native configurations.</li>
+</ul>
+
+<h2>2.2 Backend:</h2>
+<p>The backend for MealMentor AI is developed using <strong>Node.js</strong> and the <strong>Express.js</strong> framework to create a high-throughput, non-blocking asynchronous RESTful API server.</p>
+<ul>
+  <li><strong>Node.js:</strong> A robust, event-driven JavaScript runtime built on Chrome's V8 engine.</li>
+  <li><strong>Express.js:</strong> A minimalist web framework providing flexible routing and middleware chains.</li>
+  <li><strong>JSON Web Tokens (JWT) & Bcrypt:</strong> Provides stateless user authentication and salted cryptographic password hashing.</li>
+  <li><strong>Multer:</strong> Handles multipart stream uploads for food photographs and medical lab reports.</li>
+</ul>
+
+<div class="page-break"></div>
+
+<!-- PAGE 3 (Report Page 8): BACKEND PROS/CONS, DATABASE POSTGRESQL + PGVECTOR -->
+<h3>2.2.1 Advantages of the Backend Stack</h3>
+<ul>
+  <li><strong>High Concurrency:</strong> Non-blocking asynchronous I/O efficiently handles simultaneous upload and AI inference requests.</li>
+  <li><strong>Unified Language:</strong> Single language (JavaScript/TypeScript) shared across mobile client and server.</li>
+  <li><strong>Lightweight Footprint:</strong> Low memory consumption enabling reliable hosting on cost-effective student and cloud tiers.</li>
+</ul>
+
+<h3>2.2.2 Disadvantages</h3>
+<ul>
+  <li><strong>Single-Threaded Execution:</strong> Heavy local compute operations can block the event loop (mitigated by offloading AI processing to cloud AI APIs).</li>
+</ul>
+
+<h3>2.2.3 Database: PostgreSQL & pgvector</h3>
+<h4>2.2.3.1 What is Relational Database with pgvector?</h4>
+<p>PostgreSQL is an advanced, enterprise-grade open-source relational database providing full ACID compliance. The <strong>pgvector</strong> extension enhances PostgreSQL by enabling native high-dimensional vector similarity indexing directly alongside traditional relational tables.</p>
+
+<div class="table-box">
+  <div class="table-title">Table 2.2: Comparison of Database Management Systems</div>
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 25%;">Aspect</th>
+        <th style="width: 25%;">PostgreSQL + pgvector</th>
+        <th style="width: 25%;">MongoDB (NoSQL)</th>
+        <th style="width: 25%;">MySQL (Relational)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Data Integrity</strong></td>
+        <td>Strict ACID compliance with relational constraints.</td>
+        <td>Document-based schema-less consistency.</td>
+        <td>Strict ACID compliance.</td>
+      </tr>
+      <tr>
+        <td><strong>Vector AI Search</strong></td>
+        <td>Native built-in vector similarity search.</td>
+        <td>Requires paid Atlas Vector Search add-on.</td>
+        <td>Requires external vector database.</td>
+      </tr>
+      <tr>
+        <td><strong>Analytics & Joins</strong></td>
+        <td>Superior SQL joins and time-series aggregations.</td>
+        <td>Aggregation pipeline, less optimal for multi-joins.</td>
+        <td>Standard SQL joins, no vector indexing.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h4>2.2.3.2 Features & Advantages</h4>
+<ul>
+  <li><strong>Unified Relational & Vector Storage:</strong> Manages users, meal logs, and AI profile embeddings within a single database, eliminating the need for a separate vector database.</li>
+  <li><strong>Array & JSON Support:</strong> Native array types store dietary preferences and health tags efficiently.</li>
+</ul>
+
+<div class="page-break"></div>
+
+<!-- PAGE 4 (Report Page 9): MULTIMODAL AI (GEMINI FLASH) & AI CAPABILITIES -->
+<h2>2.3 Multimodal Artificial Intelligence & Cloud Services</h2>
+<p>The core intelligence of MealMentor AI is driven by modern multimodal foundation models. For academic projects, <strong>Google Gemini Flash</strong> (via Google AI Studio Free Tier) and <strong>OpenAI GPT-mini</strong> provide state-of-the-art multimodal vision with zero upfront cost and low latency.</p>
+
+<div class="table-box">
+  <div class="table-title">Table 2.3: Comparison of Multimodal AI Models</div>
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 24%;">Aspect</th>
+        <th style="width: 26%;">Google Gemini Flash</th>
+        <th style="width: 25%;">OpenAI GPT-mini</th>
+        <th style="width: 25%;">Legacy Models (GPT-4)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Cost for Students</strong></td>
+        <td><strong>100% Free Tier</strong> (15 RPM / 1,500 RPD).</td>
+        <td>Ultra-low per-token cost.</td>
+        <td>High cost; costly for students.</td>
+      </tr>
+      <tr>
+        <td><strong>Vision & Food Scan</strong></td>
+        <td>Native multimodal vision for Indian dishes.</td>
+        <td>Solid vision understanding.</td>
+        <td>Good vision, high latency.</td>
+      </tr>
+      <tr>
+        <td><strong>Document OCR</strong></td>
+        <td>Extracts medical PDF lab tables accurately.</td>
+        <td>Good JSON extraction.</td>
+        <td>High cost per PDF page.</td>
+      </tr>
+      <tr>
+        <td><strong>Inference Speed</strong></td>
+        <td>Blazing Fast (&lt;1.2s response time).</td>
+        <td>Fast (&lt;1.8s response time).</td>
+        <td>Slower response times.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h3>2.3.1 Multimodal Capabilities</h3>
+<ul>
+  <li><strong>Food Image Recognition:</strong> Analyzes camera captures of Indian thalis (Paneer Butter Masala, Rotis, Dal Tadka) to extract calories, portion estimates (grams/katoris), and macronutrients (Protein, Carbs, Fats).</li>
+  <li><strong>Lab Report OCR Parsing:</strong> Ingests blood test PDFs and extracts standardized biomarkers (Fasting Sugar, HbA1c, Cholesterol, Vitamin D3).</li>
+  <li><strong>Context-Aware AI Dietitian:</strong> Provides personalized conversational dietary advice dynamically aligned with user lab reports and remaining calorie budgets.</li>
+  <li><strong>Semantic Vector Embeddings:</strong> Generates dense vector embeddings for RAG matching and personalized food recommendations.</li>
+</ul>
+
+<div class="page-break"></div>
+
+<!-- PAGE 5 (Report Page 10): SUMMARIZATION TABLE (EXACT REFERENCE 1 FORMAT) -->
+<h2>2.4 Summarization</h2>
+<p>Table 2.4 presents the comprehensive summary of all surveyed technologies adopted across the MealMentor AI architecture.</p>
+
+<div class="table-box">
+  <div class="table-title">Table 2.4: Master Technology Summarization</div>
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 18%;">Technology</th>
+        <th style="width: 18%;">Purpose</th>
+        <th style="width: 24%;">Features</th>
+        <th style="width: 22%;">Advantages</th>
+        <th style="width: 18%;">Disadvantages</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>React Native & Expo</strong></td>
+        <td>Frontend Mobile UI</td>
+        <td>Cross-platform, Hot Reload, SVG charting, native camera APIs</td>
+        <td>Fast development, native performance, unified UI</td>
+        <td>Bridge overhead for heavy local computations</td>
+      </tr>
+      <tr>
+        <td><strong>Node.js & Express.js</strong></td>
+        <td>Backend RESTful API</td>
+        <td>Event-driven, async I/O, modular middleware, JWT authentication</td>
+        <td>High concurrency, shared syntax, rapid development</td>
+        <td>Single-threaded CPU execution limit</td>
+      </tr>
+      <tr>
+        <td><strong>PostgreSQL + pgvector</strong></td>
+        <td>Database & Vector Engine</td>
+        <td>ACID compliance, relational schema, vector similarity search</td>
+        <td>Unified metadata & vector storage, high reliability</td>
+        <td>Requires basic vector index configuration</td>
+      </tr>
+      <tr>
+        <td><strong>Google Gemini Flash</strong></td>
+        <td>Multimodal AI & OCR</td>
+        <td>Food vision recognition, PDF lab report parsing, dietary chat</td>
+        <td>100% Free Tier, sub-second latency, native multimodal</td>
+        <td>Rate limits on free tier (15 RPM)</td>
+      </tr>
+      <tr>
+        <td><strong>Cloud App Service & Storage</strong></td>
+        <td>Hosting & Storage</td>
+        <td>Linux container hosting, encrypted object storage for assets</td>
+        <td>High availability, secure media persistence</td>
+        <td>Requires cloud account configuration</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h3>2.4.1 Summary of System Requirements</h3>
+<ul>
+  <li><strong>Client-Side:</strong> Android OS device, Dual-Core processor, 3 GB RAM, Camera with autofocus, Internet connectivity.</li>
+  <li><strong>Server-Side:</strong> Node.js runtime, PostgreSQL with pgvector extension, Google AI Studio API Key, Cloud Hosting & Storage.</li>
+</ul>
+
+</body>
+</html>

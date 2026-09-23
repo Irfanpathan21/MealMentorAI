@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "685709120748",
+    "project_id": "mealmentorai21",
+    "storage_bucket": "mealmentorai21.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:685709120748:android:710a5fad452e705975c1c9",
+        "android_client_info": {
+          "package_name": "com.mealmentor.ai"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "685709120748-vbmcpgb14ct6d8mipamop9o674rc08ad.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC18sWUwm1o5Yt6KUnmv1e-wykDlQF_K0E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "685709120748-vbmcpgb14ct6d8mipamop9o674rc08ad.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

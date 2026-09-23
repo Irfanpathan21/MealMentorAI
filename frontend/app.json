@@ -1,0 +1,39 @@
+{
+  "expo": {
+    "name": "MealMentor AI",
+    "slug": "mealmentor-ai",
+    "version": "1.0.3",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "backgroundColor": "#1B5E20",
+      "resizeMode": "contain"
+    },
+    "android": {
+      "package": "com.mealmentor.ai",
+      "versionCode": 4,
+      "googleServicesFile": "./google-services.json",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundColor": "#1B5E20"
+      },
+      "permissions": [
+        "INTERNET",
+        "ACCESS_NETWORK_STATE",
+        "CAMERA",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "e34cb923-e430-40b7-b022-47df6e209014"
+      }
+    },
+    "owner": "irfanpathan21"
+  }
+}
